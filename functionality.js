@@ -1,3 +1,8 @@
+// JSON2D3
+// George Papanikolaou 2015
+// www.skoumas.com
+//-------------------------
+
 d3.select("#voteAgain").on("click",function(d){
 	voteAgain();
 }); 
@@ -54,20 +59,21 @@ d3.xhr("choose.php")
             d3.select("#theform")
 		            .transition()
 		            .style("opacity","0")
-		            .each("end", function() {
+		            .each("end", function() 
+		            {
 
-		            	d3.select(this).style("display","none")
+			        	d3.select(this).style("display","none")
 
-		            	d3.select("#success").style("display","block")
-					   						 .style("opacity","0")
-					   						 .append("div")
-					   						 .attr("class","alert alert-success")
-					   						 .html('You chose the number '+selectedValue+'.<br> Thank you for voting<br>')
-					   						 .append("a")
-					   						 .attr("href","#")
-					   						 .attr("id","voteAgain")
-					   						 .attr("onClick","voteAgain()")
-					   						 .html("Vote Again");
+			        	d3.select("#success").style("display","block")
+								 .style("opacity","0")
+								 .append("div")
+								 .attr("class","alert alert-success")
+								 .html('You chose the number '+selectedValue+'.<br> Thank you for voting<br>')
+								 .append("a")
+								 .attr("href","#")
+								 .attr("id","voteAgain")
+								 .attr("onClick","voteAgain()")
+								 .html("Vote Again");
 					   						  
 					    d3.select("#success")
 					            .transition()
@@ -76,19 +82,11 @@ d3.xhr("choose.php")
 					     renderData();
 
  
-		        });
+		    		});
       
            }
            else
-           {
-           	d3.select("#error").style("display","block");
-           }
-
+           		d3.select("#error").style("display","block");
+           
     });
-
-	 
-    
-
- 
-
 });

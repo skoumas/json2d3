@@ -1,15 +1,16 @@
-//Variables
+// JSON2D3
+// George Papanikolaou 2015
+// www.skoumas.com
+//-------------------------
+
+
 var width = 480;
 var height = 440;
 var line;
 var lastMaxTimes=0;
  
- var renderedOnce = false;
-
+var renderedOnce = false;
  
-
- 
-
 function renderData(theArray)
 {
 	d3.json("data.php",function(theArray)
@@ -107,9 +108,7 @@ function renderData(theArray)
 		 		.text(function(d){return d.times;}); 
 		}
 
-
-	
-
+ 
 
 		texts.enter()
 			.append("text")
